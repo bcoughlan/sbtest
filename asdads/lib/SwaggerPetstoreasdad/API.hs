@@ -90,12 +90,12 @@ lookupEither key assocs =
 
 -- | Servant type-level API, generated from the Swagger spec for SwaggerPetstoreasdad.
 type SwaggerPetstoreasdadAPI
-    =    "pet" :> ReqBody '[JSON] Pet :> Verb 'POST 200 '[JSON] () -- 'addPet' route
+    =    "paedt" :> ReqBody '[JSON] Pet :> Verb 'POST 200 '[JSON] () -- 'addPet' route
     :<|> "pet" :> Capture "petId" Integer :> Header "api_key" Text :> Verb 'DELETE 200 '[JSON] () -- 'deletePet' route
     :<|> "pet" :> "findByStatus" :> QueryParam "status" (QueryList 'MultiParamArray (Text)) :> Verb 'GET 200 '[JSON] [Pet] -- 'findPetsByStatus' route
     :<|> "pet" :> "findByTags" :> QueryParam "tags" (QueryList 'MultiParamArray (Text)) :> Verb 'GET 200 '[JSON] [Pet] -- 'findPetsByTags' route
     :<|> "pet" :> Capture "petId" Integer :> Verb 'GET 200 '[JSON] Pet -- 'getPetById' route
-    :<|> "pet" :> ReqBody '[JSON] Pet :> Verb 'PUT 200 '[JSON] () -- 'updatePet' route
+    :<|> "paedt" :> ReqBody '[JSON] Pet :> Verb 'PUT 200 '[JSON] () -- 'updatePet' route
     :<|> "pet" :> Capture "petId" Integer :> ReqBody '[FormUrlEncoded] FormUpdatePetWithForm :> Verb 'POST 200 '[JSON] () -- 'updatePetWithForm' route
     :<|> "pet" :> Capture "petId" Integer :> "uploadImage" :> ReqBody '[FormUrlEncoded] FormUploadFile :> Verb 'POST 200 '[JSON] ApiResponse -- 'uploadFile' route
     :<|> "store" :> "order" :> Capture "orderId" Integer :> Verb 'DELETE 200 '[JSON] () -- 'deleteOrder' route
