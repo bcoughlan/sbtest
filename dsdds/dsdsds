@@ -1,0 +1,89 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "Test API 2.1.0",
+    "description" : "# API contract for managing Books and Authors.\n\n---\n![diagram](https://media.publit.io/file/mybookstore.png)\n\n---\n\n#### <br/>\n\n### Three methods for communicating API version to the back-end:\n\n1. Server tag variable named `basePath`\n2. Custom header parameter in each method named `x-version`\n3. Put the version in the actual path `/book/v3`\n<br/>\n\n---\n",
+    "termsOfService" : "https://app.swaggerhub.com/eula",
+    "contact" : {
+      "name" : "Micheal Higgins",
+      "url" : "https://smartbear.com",
+      "email" : "micheal.higgins@smartbear.com"
+    },
+    "license" : {
+      "name" : "SmartBear License",
+      "url" : "http://www.smartbear.com/licenses/2022/LICENSE-2.0.html"
+    },
+    "version" : "2.1.0"
+  },
+  "servers" : [ {
+    "url" : "https://virtserver.swaggerhub.com/barryctest/adssdadsa/2.1.0",
+    "description" : "SwaggerHub API Auto Mocking"
+  }, {
+    "url" : "https://{host}:{port}/{basePath}",
+    "description" : "Live Bookstore servers",
+    "variables" : {
+      "host" : {
+        "enum" : [ "test.book.com", "staging.book.com", "production.book.com" ],
+        "default" : "test.book.com"
+      },
+      "port" : {
+        "enum" : [ "80", "8443" ],
+        "default" : "8443"
+      },
+      "basePath" : {
+        "enum" : [ "v1", "v2", "v3" ],
+        "default" : "v3"
+      }
+    }
+  } ],
+  "security" : [ {
+    "bearerAuth" : [ ]
+  } ],
+  "tags" : [ {
+    "name" : "SmartBear",
+    "description" : "SmartBear"
+  }, {
+    "name" : "Book",
+    "description" : "Book"
+  }, {
+    "name" : "Author",
+    "description" : "Author"
+  } ],
+  "paths" : {
+    "/allbooks" : {
+      "get" : {
+        "tags" : [ "Book" ],
+        "description" : "Get all books",
+        "operationId" : "book-get-all",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "description" : "The page number of items to start with (see limit)",
+          "required" : true,
+          "schema" : {
+            "minimum" : 0,
+            "type" : "integer",
+            "example" : 0,
+            "default" : 0
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          }
+        },
+        "x-user-profile" : "Public"
+      }
+    }
+  },
+  "components" : {
+    "schemas" : { },
+    "securitySchemes" : {
+      "bearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}
