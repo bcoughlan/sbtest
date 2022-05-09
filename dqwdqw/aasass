@@ -2,7 +2,7 @@
   "openapi" : "3.0.0",
   "info" : {
     "title" : "Test API 2.1.0",
-    "description" : "# API contract for managing Books and Authors.\n\n---\n![diagram](https://media.publit.io/file/mybookstore.png)\n\n---\n\n#### <br/>\n\n### Three methods for communicating API version to the back-end:\n\n1. Server tag variable named `basePath`\n2. Custom header parameter in each method named `x-version`\n3. Put the version in the actual path `/book/v3`\n<br/>\n\n---\n",
+    "description" : "# API contract for managing Books and Authors.\n\n---\n![diagram](https://media.publit.io/file/mybookstore.png)\n\n---\n\n#### <br/>\n\n### Three methods for communicating API version to the back-end:\n\n1. Server tag variable named `basePath`\n2. Custom header parameter in each method named `x-version`\n3. Put the verstestion in the actual path `/book/v3`\n<br/>\n\n---\n",
     "termsOfService" : "https://app.swaggerhub.com/eula",
     "contact" : {
       "name" : "Micheal Higgins",
