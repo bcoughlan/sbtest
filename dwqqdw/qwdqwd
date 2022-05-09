@@ -38,14 +38,14 @@
     "/pet" : {
       "post" : {
         "tags" : [ "pet" ],
-        "summary" : "Add a new pet to the store",
+        "summary" : "Add a new pet to the storeaa",
         "operationId" : "addPet",
         "consumes" : [ "application/json", "application/xml" ],
         "produces" : [ "application/json", "application/xml" ],
         "parameters" : [ {
           "in" : "body",
           "name" : "body",
-          "description" : "Pet object that needs to be added to the store",
+          "description" : "Pet object that needs to be addeasdasdd to the store",
           "required" : true,
           "schema" : {
             "$ref" : "#/definitions/Pet"
@@ -72,7 +72,7 @@
           "description" : "Pet object that needs to be added to the store",
           "required" : true,
           "schema" : {
-            "$ref" : "#/definitions/Pet"
+            "$ref" : "#/definitions/ErrorModel"
           }
         } ],
         "security" : [ {
@@ -799,6 +799,18 @@
         },
         "type" : {
           "type" : "string"
+        },
+        "message" : {
+          "type" : "string"
+        }
+      }
+    },
+    "ErrorModel" : {
+      "required" : [ "code", "message" ],
+      "properties" : {
+        "code" : {
+          "type" : "integer",
+          "format" : "int32"
         },
         "message" : {
           "type" : "string"
